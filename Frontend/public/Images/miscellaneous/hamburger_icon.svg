@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30.4" height="30.607" viewBox="0 0 30.4 30.607">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #424242;
+      }
+    </style>
+  </defs>
+  <g id="hamburger_icon" transform="translate(-4117.5 -3410)">
+    <path id="Path_700" data-name="Path 700" class="cls-1" d="M34.333,44.5H15.778A2.3,2.3,0,0,0,13.5,46.778h0a2.3,2.3,0,0,0,2.278,2.278h18.6a2.3,2.3,0,0,0,2.278-2.278h0A2.307,2.307,0,0,0,34.333,44.5Z" transform="translate(4104 3378.546)"/>
+    <path id="Path_701" data-name="Path 701" class="cls-1" d="M41.581,13h-25.8A2.3,2.3,0,0,0,13.5,15.278h0a2.3,2.3,0,0,0,2.278,2.278H41.622A2.3,2.3,0,0,0,43.9,15.278h0A2.334,2.334,0,0,0,41.581,13Z" transform="translate(4104 3397)"/>
+    <path id="Path_702" data-name="Path 702" class="cls-1" d="M41.581,75.9h-25.8A2.3,2.3,0,0,0,13.5,78.178h0a2.3,2.3,0,0,0,2.278,2.278H41.622A2.3,2.3,0,0,0,43.9,78.178h0A2.334,2.334,0,0,0,41.581,75.9Z" transform="translate(4104 3360.151)"/>
+  </g>
+</svg>

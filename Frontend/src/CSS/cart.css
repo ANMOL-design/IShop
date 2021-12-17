@@ -1,0 +1,137 @@
+.cartheading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.35px;
+    color: #117ddb;
+    font-size: 1.5rem;
+    padding: 5px;
+    font-weight: 500;
+    margin: 1% 0;
+    background: #F6F7F8 0% 0% no-repeat padding-box;
+}
+
+.cart-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2.5%;
+}
+
+.table thead tr {
+    text-align: center;
+    font-size: 1.15rem;
+}
+
+.table tbody tr {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.07rem;
+    font-weight: 500;
+}
+
+.table tbody tr td img {
+    max-width: 120px;
+    max-height: 120px;
+}
+
+.table tbody tr td select {
+    width: 40px;
+}
+
+.cutitem {
+    color: #FF1E56;
+    border-radius: 50px;
+    background: rgb(247, 179, 185) 0% 0% no-repeat padding-box;
+    width: 22px;
+    height: 22px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.cartproduct {
+    text-align: left;
+    cursor: pointer;
+}
+
+.noitems {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.cart-action {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.cart-action div input {
+    padding: 9px;
+    max-width: 200px;
+    max-height: 38px;
+}
+
+.inputvoutcher {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.btn-block {
+    width: 100%;
+    padding: 2%;
+    font-size: 1.09rem;
+}
+
+@media (max-width: 900px) {
+    .checkout {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 30vw;
+    }
+}
+
+@media (max-width: 700px) {
+    .cart-action {
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin: 2%;
+    }
+    .checkout {
+        width: 300px;
+    }
+    .marginsmall {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 690px) {
+    .table thead tr {
+        display: none;
+    }
+    .table tbody tr {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 100%;
+        border-bottom: 2px solid #f0f0f0;
+    }
+    .table tbody tr td {
+        border-bottom: 0px;
+    }
+    .cartproduct {
+        text-align: center;
+    }
+}

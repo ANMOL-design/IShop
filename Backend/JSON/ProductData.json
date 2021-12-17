@@ -1,0 +1,294 @@
+[{
+        "id": "7836481",
+        "name": "Apple Macbook Pro",
+        "NewPrice": 449,
+        "OldPrice": 549,
+        "image": "./Images/Products/AppleMacbookAir.png",
+        "qntInStock": 2
+    },
+    {
+        "id": "7836482",
+        "name": "Apple Macbook Pro",
+        "NewPrice": 499,
+        "OldPrice": 599,
+        "image": "./Images/Products/415ELavtbuL._SL1000_.png",
+        "qntInStock": 3
+    },
+    {
+        "id": "7836483",
+        "name": "Apple Homepod Mini",
+        "NewPrice": 299,
+        "OldPrice": 300,
+        "image": "./Images/Products/Apple_homepod-mini-white.png",
+        "qntInStock": 1
+    },
+    {
+        "id": "7836484",
+        "name": "Iphone 11",
+        "NewPrice": 149,
+        "OldPrice": 180,
+        "image": "./Images/Products/AppleiPhone11.png",
+        "qntInStock": 10
+    },
+
+    {
+        "id": "7836485",
+        "name": "iPhone S",
+        "NewPrice": 99,
+        "OldPrice": 129,
+        "image": "./Images/Products/apples.png",
+        "qntInStock": 8
+    },
+    {
+        "id": "7836486",
+        "name": "Apple iPad",
+        "NewPrice": 189,
+        "OldPrice": 199,
+        "image": "./Images/Products/AppleIpad.png",
+        "qntInStock": 3
+    },
+
+    {
+        "id": "7836487",
+        "name": "Apple Watch 21-1",
+        "NewPrice": 49,
+        "OldPrice": 99,
+        "image": "./Images/Products/AppleWatch21-1.png",
+        "qntInStock": 8
+    },
+    {
+        "id": "7836488",
+        "name": "Apple iPod 2A",
+        "NewPrice": 249,
+        "OldPrice": 299,
+        "image": "./Images/Products/apple_iPod_2A.png",
+        "qntInStock": 3
+    },
+    {
+        "id": "7836489",
+        "name": "Apple Macbook Pro",
+        "NewPrice": 499,
+        "OldPrice": 549,
+        "image": "./Images/Products/macbook-pro.jpg",
+        "qntInStock": 12
+    },
+    {
+        "id": "78364810",
+        "name": "Apple Hero 2x",
+        "NewPrice": 299,
+        "OldPrice": 399,
+        "image": "./Images/Products/design-hero_2x.png",
+        "qntInStock": 12
+    },
+
+    {
+        "id": "78364811",
+        "name": "Apple MQHX2",
+        "NewPrice": 99,
+        "OldPrice": 110,
+        "image": "./Images/Products/MQHX2.png",
+        "qntInStock": 11
+    },
+    {
+        "id": "78364812",
+        "name": "New Apple Mac Mini",
+        "NewPrice": 399,
+        "OldPrice": 499,
+        "image": "./Images/Products/NewAppleMacMini.png",
+        "qntInStock": 12
+    },
+    {
+        "id": "78364813",
+        "name": "iPhone 6 Plus",
+        "NewPrice": 129,
+        "OldPrice": 149,
+        "image": "./Images/Products/iphone6.jpg",
+        "qntInStock": 1
+    },
+
+    {
+        "id": "78364814",
+        "name": "Apple Smartwatch Magic",
+        "NewPrice": 99,
+        "OldPrice": 129,
+        "image": "./Images/Products/AppleSmartwatchMagic.png",
+        "qntInStock": 0
+    },
+
+    {
+        "id": "78364815",
+        "name": "Apple Airpods",
+        "NewPrice": 199,
+        "OldPrice": 229,
+        "image": "./Images/Products/apple_airpods.png",
+        "qntInStock": 1
+    },
+    {
+        "id": "78364816",
+        "name": "Airpods Max Hero",
+        "NewPrice": 99,
+        "OldPrice": 199,
+        "image": "./Images/Products/airpods-max-hero.png",
+        "qntInStock": 12
+    },
+    {
+        "id": "78364817",
+        "name": "Air Headphone",
+        "NewPrice": 119,
+        "OldPrice": 199,
+        "image": "./Images/Products/3_Corousel.png",
+        "qntInStock": 7
+    },
+    {
+        "id": "78364818",
+        "name": "iPhone 8",
+        "NewPrice": 299,
+        "OldPrice": 399,
+        "image": "./Images/Products/2_corousel.png",
+        "qntInStock": 7
+    },
+    {
+        "id": "78364819",
+        "name": "Macbook Pro",
+        "NewPrice": 499,
+        "OldPrice": 599,
+        "image": "./Images/Products/41+pW8YsKfL._SL1000_.jpg",
+        "qntInStock": 9
+    },
+    {
+        "id": "78364820",
+        "name": "Connection Cables",
+        "NewPrice": 49,
+        "OldPrice": 99,
+        "image": "./Images/Products/jack.png",
+        "qntInStock": 0
+    },
+    {
+        "id": "78364821",
+        "name": "Apple Smart Watch",
+        "NewPrice": 129,
+        "OldPrice": 199,
+        "image": "./Images/Products/71fwbMm1NBL._AC_SL1500_.png",
+        "qntInStock": 0
+    },
+    {
+        "id": "78364822",
+        "name": "Apple Airpods",
+        "NewPrice": 119,
+        "OldPrice": 199,
+        "image": "./Images/Products/apple_airpods.png",
+        "qntInStock": 4
+    },
+    {
+        "id": "78364823",
+        "name": "Apple Mac",
+        "NewPrice": 499,
+        "OldPrice": 549,
+        "image": "./Images/Products/apple_mac.svg",
+        "qntInStock": 6
+    },
+    {
+        "id": "78364824",
+        "name": "AppleWatch21-1",
+        "NewPrice": 99,
+        "OldPrice": 149,
+        "image": "./Images/Products/AppleWatch21-1.png",
+        "qntInStock": 1
+    },
+    {
+        "id": "78364825",
+        "name": "Beats Headphones",
+        "NewPrice": 199,
+        "OldPrice": 249,
+        "image": "./Images/Products/beats_headphones_story_1504589454803.webp",
+        "qntInStock": 0
+    },
+    {
+        "id": "78364826",
+        "name": "Beats Solo",
+        "NewPrice": 149,
+        "OldPrice": 249,
+        "image": "./Images/Products/beats_solo_2.svg",
+        "qntInStock": 8
+    },
+    {
+        "id": "78364827",
+        "name": "Squared",
+        "NewPrice": 49,
+        "OldPrice": 149,
+        "image": "./Images/Products/H-squared.svg",
+        "qntInStock": 9
+    },
+    {
+        "id": "78364828",
+        "name": "iphone 6 plus",
+        "NewPrice": 149,
+        "OldPrice": 249,
+        "image": "./Images/Products/iphone_6_plus.svg",
+        "qntInStock": 3
+    },
+    {
+        "id": "78364829",
+        "name": "iphone 11",
+        "NewPrice": 249,
+        "OldPrice": 399,
+        "image": "./Images/Products/iPhone_icon.svg",
+        "qntInStock": 5
+    },
+    {
+        "id": "78364830",
+        "name": "Netatmo Rain",
+        "NewPrice": 49,
+        "OldPrice": 99,
+        "image": "./Images/Products/Netatmo_rain.svg",
+        "qntInStock": 6
+    },
+    {
+        "id": "78364831",
+        "name": "Beats Airpods",
+        "NewPrice": 119,
+        "OldPrice": 149,
+        "image": "./Images/Products/shopping.webp",
+        "qntInStock": 9
+    },
+    {
+        "id": "78364832",
+        "name": "Airpods s-l640",
+        "NewPrice": 129,
+        "OldPrice": 149,
+        "image": "./Images/Products/s-l640.jpg",
+        "qntInStock": 1
+    },
+    {
+        "id": "78364833",
+        "name": "iPhone X",
+        "NewPrice": 329,
+        "OldPrice": 349,
+        "image": "./Images/Products/mobile_c2.png",
+        "qntInStock": 0
+    },
+    {
+        "id": "78364834",
+        "name": "AppleSmartwatchMagic",
+        "NewPrice": 99,
+        "OldPrice": 129,
+        "image": "./Images/Products/AppleSmartwatchMagic.png",
+        "qntInStock": 8
+    },
+    {
+        "id": "78364835",
+        "name": "Apple Airpods",
+        "NewPrice": 119,
+        "OldPrice": 159,
+        "image": "./Images/Products/apple_airpods.png",
+        "qntInStock": 7
+    },
+    {
+        "id": "78364836",
+        "name": "Apple Mackbook Pro",
+        "NewPrice": 499,
+        "OldPrice": 599,
+        "image": "./Images/Products/AppleMacbookAir.png",
+        "qntInStock": 10
+    }
+]

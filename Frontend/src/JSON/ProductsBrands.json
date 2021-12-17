@@ -1,0 +1,40 @@
+[{
+        "id": 1,
+        "brandname": "Apple",
+        "count": "99+"
+    },
+    {
+        "id": 2,
+        "brandname": "LG",
+        "count": 99
+    },
+    {
+        "id": 3,
+        "brandname": "Samsung",
+        "count": 99
+    },
+    {
+        "id": 4,
+        "brandname": "MI",
+        "count": 50
+    }, {
+        "id": 5,
+        "brandname": "Siemens",
+        "count": 60
+    },
+    {
+        "id": 6,
+        "brandname": "Vivo",
+        "count": 30
+    },
+    {
+        "id": 7,
+        "brandname": "Asus",
+        "count": 10
+    },
+    {
+        "id": 8,
+        "brandname": "Godrej",
+        "count": 20
+    }
+]

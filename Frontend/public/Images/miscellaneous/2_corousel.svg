@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="650" viewBox="0 0 1920 650">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="-0.199" y1="1.519" x2="1.328" y2="-0.285" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e71d3a"/>
+      <stop offset="0.272" stop-color="#e12241"/>
+      <stop offset="0.389" stop-color="#e51f72"/>
+      <stop offset="0.535" stop-color="#ea505a"/>
+      <stop offset="0.818" stop-color="#446bd2"/>
+      <stop offset="1" stop-color="#42a8fe"/>
+    </linearGradient>
+  </defs>
+  <rect id="_2_corousel" data-name="2_corousel" class="cls-1" width="1920" height="650"/>
+</svg>
