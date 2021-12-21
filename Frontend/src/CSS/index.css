@@ -45,3 +45,12 @@ body {
     font-size: 3rem;
     font-weight: 600;
 }
+
+.loader {
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #c0c0c0;
+    height: 80vh;
+}

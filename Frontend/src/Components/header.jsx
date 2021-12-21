@@ -5,12 +5,25 @@ import { Link } from "react-router-dom";
 import profileImg from "./Images/Web/profile_icon.svg";
 import bagImg from "./Images/Web/bag_icon.svg";
 import Logo from "./Images/Web/iSHOP_Logo.svg";
+import HamBurgerIcon from "./Images/Web/hamburger_icon.svg";
 import { useSelector} from "react-redux";
 
 function Header(){
 
+    const toggleBox = () => {
+        var element = document.getElementsByClassName("header-links-container")[0];
+      //   console.log(element)
+        element.classList.toggle("navbarHide");
+       
+    };
+
     const cart = useSelector(state => state.cart);
     const {cartItems} = cart;
+    var totalPrice = cartItems.reduce( (a, c) => a + c.price * c.qty, 0);
+
+    const UserLoginDetails = useSelector(state => state.isLoggedIn)
+    const {isLoggedIn} = UserLoginDetails;
+    console.log(isLoggedIn);
 
     return(
         <>
@@ -18,57 +31,38 @@ function Header(){
           <div className="heading-top-container">
             {/* Division 1 for en and $  */}
             <div className="header-profile-container">
-                <span className="dropdown">
-                    <a className="dropdown-toggle" href="/" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                        EN
-                    </a>
-
-                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li className="dropdown-item">en-US</li>
-                        <li className="dropdown-item">IN</li>
-                        <li className="dropdown-item">SZ</li>
-                    </ul>
-                </span>
-                <span className="dropdown">
-                    <a className="dropdown-toggle" href="/" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                         &#36;
-                    </a>
-
-                    <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li className="dropdown-item">&#36;</li>
-                        <li className="dropdown-item">&#x20B9;</li>
-                        <li className="dropdown-item">&#163;</li>
-                    </ul>
-                </span>
+                {!isLoggedIn ? <><Link to="/login">Login</Link><Link to="/register">Register</Link></> :
+                    <Link to="/logout">Logout</Link>
+                }
             </div>
             {/* Division 2 for My Profile  */}
             <div className="header-profile-container">
                 <span>
                     <img src={profileImg} alt="Profile" />&nbsp;
-                    <Link to="/profile">My Profile</Link>
+                    <Link to="/profile" style={{paddingLeft: "2px"}}>My Profile</Link>
                 </span>
 
                 <span>
-                    <img src={bagImg} alt="Profile" />&nbsp;{cartItems.length} item <span style={{color: "#c0c0c0", paddingLeft: "0px"}}>$998</span>
+                    <Link to="/cart"><img src={bagImg} alt="Profile" />&nbsp;{cartItems.length} item <span style={{color: "#c0c0c0", paddingLeft: "4px"}}>${totalPrice}</span></Link>
                 </span>
-                <i className="fa fa-search"></i>
             </div>
           </div>
 
           {/* Logo Of Site  */}
           <div className="header-logo">
               <img src={Logo} alt="Logo" />
+              <img src={HamBurgerIcon} alt="Logo" className="Hamburgerico" onClick={toggleBox}/>
           </div>
 
           {/* Links of Header  */}
-          <div className="header-links-container ">
-              <div><Link to="/">HOME</Link></div>
+          <div className="header-links-container navbarHide">
+              <div onClick={toggleBox}><Link to="/">HOME</Link></div>
               <span className="dropdown">
                     <a  href="/" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                         STORE
                     </a>
 
-                    <ul className="dropdown-menu dropdown-shadow" aria-labelledby="dropdownMenuLink">
+                    <ul className="dropdown-menu dropdown-shadow" aria-labelledby="dropdownMenuLink" onClick={toggleBox}>
                         <li className="dropdown-item hoverstop">
                             <div className="dropdown-area-div">
                                 <div className="dropdown-list-head">
@@ -110,10 +104,10 @@ function Header(){
                         </li>
                     </ul>
                 </span>
-              <div><Link to="/products?value=Iphone">IPHONE</Link></div>
-              <div><Link to="/products?value=Ipad">IPAD</Link></div>
-              <div><Link to="/products?value=MacBook">MACBOOK</Link></div>
-              <div><Link to="/products?value=Accesories">ACCESORIES</Link></div>
+              <div onClick={toggleBox}><Link to="/products?value=Iphone">IPHONE</Link></div>
+              <div onClick={toggleBox}><Link to="/products?value=Ipad">IPAD</Link></div>
+              <div onClick={toggleBox}><Link to="/products?value=MacBook">MACBOOK</Link></div>
+              <div onClick={toggleBox}><Link to="/products?value=Accesories">ACCESORIES</Link></div>
           </div>
         </>
     )

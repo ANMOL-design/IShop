@@ -1,8 +1,22 @@
-import React, { useEffect} from "react";
+import React, { useEffect, useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {useParams, useLocation, useNavigate } from "react-router-dom";
 import {addToCart,  removeFromCart } from "./Actions/CartAction";
 import "./../CSS/cart.css";
+
+function loadScript(src) {
+	return new Promise((resolve) => {
+		const script = document.createElement('script')
+		script.src = src
+		script.onload = () => {
+			resolve(true)
+		}
+		script.onerror = () => {
+			resolve(false)
+		}
+		document.body.appendChild(script)
+	})
+}
 
 function MyCart(){
 
@@ -11,6 +25,40 @@ function MyCart(){
     const navigate = useNavigate();
 
     const {cartItems} = cart;
+
+    // console.log(cartItems)
+    const [userData, setUserData] = useState({});
+
+    const callAboutPage = async () => {
+        try {
+            const res = await fetch("/aboutuser", {
+                method: "GET",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                },
+                credentials: "include",
+            });
+    
+            const data = await res.json();
+                
+            if (!res.status === 200) {
+                const error = new Error(res.error);
+                throw error;
+            }
+
+            console.log(data);
+            setUserData(data);
+        } 
+        catch (err) {
+            console.log(err);
+            navigate("/login", { replace: true })
+        }
+    };
+    
+    useEffect(() => {
+        callAboutPage();
+    }, []);
 
     const {id} = useParams();
     const value = useLocation().search;
@@ -26,7 +74,9 @@ function MyCart(){
         return () => {
             //
         }
-    }, [dispatchEvent]); // eslint-disable-line react-hooks/exhaustive-deps
+    }, [dispatchEvent]); // eslint-disable-line react-hooks/exhaustive-deps  
+
+    var totalPrice = cartItems.reduce( (a, c) => a + c.price * c.qty, 0 + 20);
    
     const removeFromCartHandler = (productId) =>{
         dispatchEvent(removeFromCart(productId));
@@ -36,9 +86,47 @@ function MyCart(){
         navigate("/products/" + id);
     }
 
-    const checkoutHandler = () =>{
-        navigate("/signin?redirect=shipping");
-    }
+	async function displayRazorpay() {
+
+		const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
+
+		if (!res) {
+			alert('Razorpay SDK failed to load. Check your Internet Connection.')
+			return
+		}
+
+		const data = await fetch('http://localhost:5000/razorpay',{ 
+            method: 'POST',
+            headers: {
+                "content-Type" : "application/json",
+            },
+            body: JSON.stringify({
+                totalPrice,
+            })
+    }).then((t) =>
+			t.json()
+		)
+
+		console.log(data)
+
+		const options = {
+			key: 'rzp_test_119cJvO3u59nKY',
+			currency: data.currency,
+			amount: data.amount.toString(),
+			order_id: data.id,
+			name: userData.name,
+			description: 'IShop Payment Gateway',
+			handler: function (response) {
+				alert(response.razorpay_payment_id, response.razorpay_order_id, response.razorpay_order_id)
+				alert("Transaction Successful.\nThanks for buying product from iShop.\n Your Order wil delivered within a week")
+			},
+		}
+		const paymentObject = new window.Razorpay(options)
+		paymentObject.open();
+
+        // destroy the cookies
+        localStorage.removeItem("cartItems");
+	}
 
     return(
         <>
@@ -62,7 +150,7 @@ function MyCart(){
                         {
                            cartItems.length === 0 ? <div className="noitems">Cart Is Empty</div> 
                            :
-                           cartItems.map((item, key) => {
+                           cartItems.map((item) => {
                                return(
                                    <>
                                    <tr key={item.id}>
@@ -88,12 +176,12 @@ function MyCart(){
               </div>
               <div className="cart-action">
                     {/* left Coupon  */}
-                    <div class="mb-3 inputvoutcher">
+                    <div className="mb-3 inputvoutcher">
                         <input type="text"  placeholder="Voucher code" aria-label="Recipient's username" aria-describedby="button-addon2" />
-                        <button class="btn btn-primary" type="button" id="button-addon2">Redeem</button>
+                        <button className="btn btn-primary" type="button" id="button-addon2">Redeem</button>
                     </div>
                     {/* Right Add Cart  */}
-                    <div class="mb-3 col-md-4">
+                    <div className="mb-3 col-md-4">
                         <div className="checkout marginsmall">
                             <p>SubTotal </p>
                             <span>${cartItems.reduce( (a, c) => a + c.price * c.qty , 0)}</span> 
@@ -109,10 +197,11 @@ function MyCart(){
                         <hr />
                         <div className="checkout">
                             <h3>TOTAL </h3>
-                            <h3>${cartItems.reduce( (a, c) => a + c.price * c.qty, 0) + 20}</h3>
+                            
+                            <h3>${totalPrice}</h3>
                         </div>
                         <div className="checkout mt-3">
-                            <button onClick={checkoutHandler} className="btn btn-primary btn-block" disabled={cartItems.length === 0}>Check out</button>
+                            <button onClick={displayRazorpay} className="btn btn-primary btn-block" disabled={cartItems.length === 0}>Check out</button>
                         </div>
                     </div>
               </div>

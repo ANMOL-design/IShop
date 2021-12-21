@@ -186,6 +186,10 @@
     font-size: 20px;
 }
 
+.cart-btn-home {
+    display: none;
+}
+
 
 /* style for banner 2  */
 
@@ -307,5 +311,11 @@ span.carousel-control-next-icon {
     }
     .home-banner-text {
         width: 80%;
+    }
+    .cart-btn-home {
+        width: 17rem;
+        margin: 8px 0px;
+        display: inline-block;
+        text-align: center;
     }
 }

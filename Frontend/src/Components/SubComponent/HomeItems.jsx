@@ -80,6 +80,7 @@ function HomeProducts(){
                                         <span className="product-actual-price">${item.NewPrice}</span>
                                         <span className="product-old-price">${item.OldPrice}</span>
                                     </div>
+                                    <div className="cart-btn-home"><Link to={"/cart/" + item.id + "?qty=1"} ><button className="btn btn-primary">ADD TO CART</button></Link></div>
                             </div>
                         </div>
                     )

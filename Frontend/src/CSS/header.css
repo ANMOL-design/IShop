@@ -7,22 +7,11 @@
     height: 2rem;
 }
 
-.header-profile-container span {
+.header-profile-container a {
     padding: 0px 1rem;
-}
-
-.header-profile-container span a {
+    font-weight: 500;
     color: #000;
     text-decoration: none;
-}
-
-li.dropdown-item {
-    padding: 4px;
-    border-bottom: 0.1rem solid #f0f0f0;
-}
-
-ul.dropdown-menu.show {
-    padding: 0;
 }
 
 .header-logo {
@@ -86,6 +75,10 @@ li.hoverstop:hover {
     background-color: #fff;
 }
 
+.Hamburgerico {
+    display: none;
+}
+
 @media (max-width: 1000px) {
     .header-links-container {
         margin: 0px 2%;
@@ -97,11 +90,50 @@ li.hoverstop:hover {
         height: auto;
         padding: 0.9%;
     }
-    .header-links-container a {
-        margin: 10px 20px
-    }
     .header-links-container {
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
         height: auto;
-        margin: 2% 1%;
+        margin: 5px 0px;
+        border-top: 1px solid #c0c0c0;
+        border-bottom: 1px solid #c0c0c0;
+    }
+    .header-links-container a {
+        margin: 5px 30px;
+        display: block;
+    }
+    .header-logo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-height: 5vh;
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+    .Hamburgerico {
+        display: inline;
+        max-height: 4vh;
+        margin-left: 1%;
+        margin-right: 3%;
+        cursor: pointer;
+    }
+    .dropdown-area-div {
+        flex-direction: column;
+    }
+    div.dropdown-list-head {
+        padding: 0.3rem;
+    }
+    div.dropdown-list-head span {
+        font-size: 18px;
+    }
+    .navbarHide {
+        display: none;
+    }
+}
+
+@media (max-width: 450px) {
+    .header-profile-container {
+        margin-bottom: 4px;
     }
 }

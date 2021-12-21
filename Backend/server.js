@@ -1,7 +1,30 @@
 const data = require("./JSON/ProductData.json");
 const express = require("express");
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
+const mongoose = require("mongoose");
+const dotenv = require('dotenv');
+const route = require("./Routes/Login");
+dotenv.config();
+app.use(express.json());
+const razorpayRouter = require('./Routes/Razopay');
+
+const url = "mongodb://127.0.0.1:27017/Ecommerce";
+// app.use(require("./Routes/Login.js"));
+app.use(route);
+
+mongoose.connect(
+    process.env.MONGODB_CONNECTION_STRING || url, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+
+    },
+    (err) => {
+        if (err) throw err;
+        console.log("MongoDB connection established");
+    }
+);
+
 
 const cors = require("cors");
 const corsOptions = {
@@ -12,6 +35,9 @@ const corsOptions = {
 
 app.use(cors(corsOptions)) // Use this after the variable declaration
 
+
+// Razorpay Integration
+app.use(`/razorpay`, razorpayRouter)
 
 // API for the Products Page
 app.get("/api/products", (req, res) => {
@@ -29,5 +55,5 @@ app.get("/api/products/:id", (req, res) => {
 })
 
 app.listen(PORT, () => {
-    console.log("Server is Running Successfully.")
+    console.log("Server is Running Successfully at PORT", PORT);
 })
