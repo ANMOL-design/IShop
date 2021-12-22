@@ -14,7 +14,7 @@ const Logout = () => {
 
 
     useEffect(() => {
-        async function fetchData(){
+    async function fetchData(){
         try {
             const res = await fetch("/logout", {
                 method: "GET",
@@ -31,7 +31,7 @@ const Logout = () => {
             }
 
             else{
-                dispatch(UserLogoutInfo());
+                dispatch(UserLogoutInfo(Boolean(false)));
                 navigate("/login", { replace: true })
             }
         } 

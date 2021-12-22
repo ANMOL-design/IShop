@@ -46,9 +46,12 @@ function Login() {
 
         // Checking status Send By server
         if (res.status === 201){
-            dispatch(UserLoginInfo());
+            dispatch(UserLoginInfo(Boolean(true)));
+            // destroy the cookies
+            localStorage.removeItem("cartItems");
             window.alert("Login Successful");
-            navigate("/", { replace: true })
+            navigate("/", { replace: true });
+            window.location.reload();
         }
         else{
             window.alert("Invalid Credential");

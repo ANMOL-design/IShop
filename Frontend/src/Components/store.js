@@ -5,8 +5,11 @@ import { LoginLogoutDetailsReducer } from "./Reducer/LoginReducer";
 import { productDetailsReducer } from "./Reducer/productReducer";
 
 const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+const LoggedDetail = Boolean(localStorage.getItem('IsLoggedIn'));
 
-const initialState = { cart: { cartItems } };
+console.log(LoggedDetail);
+
+const initialState = { cart: { cartItems }, isLoggedIn: { LoggedDetail } };
 const reducer = combineReducers({
     productDetails: productDetailsReducer,
     cart: cartReducer,

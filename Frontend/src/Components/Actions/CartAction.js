@@ -30,4 +30,5 @@ const removeFromCart = (productId) => async(dispatch, getState) => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
 }
 
+
 export { addToCart, removeFromCart };

@@ -21,9 +21,15 @@ function Header(){
     const {cartItems} = cart;
     var totalPrice = cartItems.reduce( (a, c) => a + c.price * c.qty, 0);
 
-    const UserLoginDetails = useSelector(state => state.isLoggedIn)
-    const {isLoggedIn} = UserLoginDetails;
-    console.log(isLoggedIn);
+    const IsLoggedIn = useSelector(state => state.isLoggedIn);
+    console.log(IsLoggedIn);
+    var {LoggedDetail} = IsLoggedIn;
+
+    if (typeof LoggedDetail !== Boolean){
+        LoggedDetail = Boolean(LoggedDetail);
+    }
+
+    console.log(LoggedDetail);
 
     return(
         <>
@@ -31,7 +37,7 @@ function Header(){
           <div className="heading-top-container">
             {/* Division 1 for en and $  */}
             <div className="header-profile-container">
-                {!isLoggedIn ? <><Link to="/login">Login</Link><Link to="/register">Register</Link></> :
+                {!LoggedDetail ? <><Link to="/login">Login</Link><Link to="/register">Register</Link></> :
                     <Link to="/logout">Logout</Link>
                 }
             </div>
@@ -50,7 +56,7 @@ function Header(){
 
           {/* Logo Of Site  */}
           <div className="header-logo">
-              <img src={Logo} alt="Logo" />
+              <Link to="/"><img src={Logo} alt="Logo" /></Link>
               <img src={HamBurgerIcon} alt="Logo" className="Hamburgerico" onClick={toggleBox}/>
           </div>
 

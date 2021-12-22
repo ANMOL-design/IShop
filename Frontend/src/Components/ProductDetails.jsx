@@ -22,9 +22,7 @@ function ProductsEachItem(){
     useEffect(() => {
         dispatch(detailsProduct(id));
         window.scroll(0, 100);
-        return () => {
-            //
-        }
+        
     }, [dispatch])
 
     // Code to redirect user to cart page on click to add cart

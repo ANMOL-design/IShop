@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React,{useEffect, useState} from "react";
 import "./../CSS/home.css";
 import { Link } from "react-router-dom";
 import HomeProducts from "./SubComponent/HomeItems";
@@ -8,13 +8,20 @@ import HomeFeatures from "./SubComponent/HomeNewProducts";
 
 function Home(){
 
-    useEffect(() => {
-      window.scroll(0,0);
 
-      return () => {
-        //
-      }
-    }, [])
+    const [DataLoading, setDataLoading] = useState(false);
+
+
+    useEffect(() => {
+        window.scroll(0,0);
+        setDataLoading(true);
+    }, []);
+
+    if (!DataLoading){
+        return (
+            <div className="loader">Loading...</div>
+        );
+    }
 
     return(
         <>

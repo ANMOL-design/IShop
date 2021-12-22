@@ -76,8 +76,10 @@ function MyCart(){
         }
     }, [dispatchEvent]); // eslint-disable-line react-hooks/exhaustive-deps  
 
-    var totalPrice = cartItems.reduce( (a, c) => a + c.price * c.qty, 0 + 20);
+
    
+    var totalPrice = cartItems.reduce( (a, c) => a + c.price * c.qty, 0 + 20);
+ 
     const removeFromCartHandler = (productId) =>{
         dispatchEvent(removeFromCart(productId));
     }
@@ -118,14 +120,16 @@ function MyCart(){
 			description: 'IShop Payment Gateway',
 			handler: function (response) {
 				alert(response.razorpay_payment_id, response.razorpay_order_id, response.razorpay_order_id)
-				alert("Transaction Successful.\nThanks for buying product from iShop.\n Your Order wil delivered within a week")
+				alert("Transaction Successful.\nThanks for buying product from iShop.\n Your Order wil delivered within a week");
+
+                 // destroy the cookies
+                localStorage.removeItem("cartItems");
+                navigate("/");
+                window.location.reload();
 			},
 		}
 		const paymentObject = new window.Razorpay(options)
 		paymentObject.open();
-
-        // destroy the cookies
-        localStorage.removeItem("cartItems");
 	}
 
     return(

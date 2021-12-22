@@ -29,16 +29,14 @@ router.post("/register", async(req, res) => {
 
     if (!name || !email || !number || !password || !cpassword) {
         return res.json({ msg: "Fill all the reqired fields" })
-    }
-
-    if (password !== cpassword) {
+    } else if (password !== cpassword) {
         return res.json({ msg: "Passwords are not same" });
     }
 
     // Find that user number is not available already in DB
     User.findOne({ number: number }).then((numberexist) => {
         if (numberexist) {
-            res.json({ msg: "Number is Already Exist" });
+            return res.json({ msg: "Number is Already Exist" });
         }
     })
 
@@ -46,22 +44,25 @@ router.post("/register", async(req, res) => {
     User.findOne({ email: email })
         .then((existingUser) => {
             if (existingUser) {
-                res.send(422).json({ msg: "User Already exist" });
+                return res.sendStatus(422).json({ msg: "User Already exist" });
             }
+
+            const user = new User({ name, email, number, password, cpassword, time });
+
+
+            // Save the user to DB and send Successful message
+            user.save().then(() => {
+                    res.status(201).json({ msg: "Registration Successful" });
+                })
+                .catch(() => {
+                    res.status(501).json({ msg: "Failed to Register" })
+                })
         })
         .catch((err) => {
             console.log("Mera Dimag Kaharab hai mai error bej ra" + err);
         })
 
-    const user = new User({ name, email, number, password, cpassword, time });
 
-    // Save the user to DB and send Successful message
-    user.save().then(() => {
-            res.status(201).json({ msg: "Registration Successful" });
-        })
-        .catch(() => {
-            res.status(501).json({ msg: "Failed to Register" })
-        })
 
 })
 
