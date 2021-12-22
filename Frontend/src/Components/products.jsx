@@ -84,7 +84,7 @@ function ProductsDetails(){
     useEffect(() => {
         window.scroll(0,0);
         const fetchdata = async () =>{
-            const {data} = await axios.get("http://localhost:5000/api/products");
+            const {data} = await axios.get("/api/products");
             setproduct(data);
         }
         fetchdata();

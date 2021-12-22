@@ -97,7 +97,7 @@ function MyCart(){
 			return
 		}
 
-		const data = await fetch('http://localhost:5000/razorpay',{ 
+		const data = await fetch('/razorpay',{ 
             method: 'POST',
             headers: {
                 "content-Type" : "application/json",
