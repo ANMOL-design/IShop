@@ -45,13 +45,22 @@ function Login() {
         })
 
         // Checking status Send By server
-        if (res.status === 201){
+        if (res.status === 200){
             dispatch(UserLoginInfo(Boolean(true)));
             // destroy the cookies
             localStorage.removeItem("cartItems");
             window.alert("Login Successful");
             navigate("/", { replace: true });
             window.location.reload();
+        }
+        else if (res.status === 400){
+            window.alert("Enter Email and Password.");
+        }
+        else if (res.status === 401){
+            window.alert("Password is Incorrect.");
+        }
+        else if (res.status === 402){
+            window.alert("Email don't exist or Invalid Credential.");
         }
         else{
             window.alert("Invalid Credential");
@@ -87,6 +96,7 @@ function Login() {
                                     }}
                                   id="email"
                                   placeholder="Enter your email"
+                                  required
                               />
                           </label>
                           <br />
@@ -104,6 +114,7 @@ function Login() {
                                     }}
                                     id="password"
                                   placeholder="Enter your password"
+                                  required
                                 />
                           </label>
                           <br />

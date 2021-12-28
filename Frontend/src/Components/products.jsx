@@ -13,32 +13,11 @@ function ProductsDetails(){
     const [product, setproduct] = useState([]);
     const [cntBrand, setcntBrand] = useState([4]);
 
-
-    var [showstart, setshowstart] = useState([0]);
     var [showend, setshowend] = useState([9]);
 
     const ProductItemShowDisplay1 = () => {
-        setshowstart(showstart = 0);
-        setshowend(showend = 9);
-        window.scroll(0,500);
+        setshowend(Number(showend) + 3);
     }
-    const ProductItemShowDisplay2 = () => {
-        setshowstart(showstart = 9);
-        setshowend(showend = 18);
-        window.scroll(0,500);
-    }
-    const ProductItemShowDisplay3 = () => {
-        setshowstart(showstart = 18);
-        setshowend(showend = 27);
-        window.scroll(0,500);
-    }
-    const ProductItemShowDisplay4 = () => {
-        setshowstart(showstart = 27);
-        setshowend(showend = 36);
-        window.scroll(0,500);
-    }
-
-    const productTotal = product.length * 25;
 
     const qty = value.split("=")[1];
 
@@ -93,8 +72,19 @@ function ProductsDetails(){
           //
         }
       }, [])
+
+    var result = []
+    product.map((data) => {
+        // console.log(data.category, qty);
+        if(data.category === qty){
+            // console.log("I got The Same Category")
+            result.push(data);
+        }
+    });
+
     return(
         <> 
+            
             {/* Product page Heading  */}
             <div className="productsDetailsHeading">
                 <p className="productsDetailsinfo">Store / {qty}</p>
@@ -163,11 +153,11 @@ function ProductsDetails(){
                     </div>
                     {/* Info about Content  */}
                     <div className="product-info-right-inner">
-                        <h3 className="mb-0">Total Items in Store: {productTotal}+</h3>
+                        <h3 className="mb-0">Total Items in {qty} Store: {result.length}</h3>
                     </div>
                     {/* Content of Products  */}
                     <div className="home-products-details container-fluid">
-                    {product.slice(showstart, showend).map( (item) => {
+                    {result.slice(0, showend).map( (item) => {
                     return(
                         <div key={item.id} className="card " id="pc" style={{width: "17.8rem"}}>
                             {/* Upper Image Portion of card  */}
@@ -205,11 +195,8 @@ function ProductsDetails(){
                     </div>
 
                     {/* Making the selection list  */}
-                    <div className="product-info-right-inner nopadding">
-                        <h3 className="mb-0 product-selector" onClick={ProductItemShowDisplay1}>1</h3>
-                        <h3 className="mb-0 product-selector" onClick={ProductItemShowDisplay2}>2</h3>
-                        <h3 className="mb-0 product-selector" onClick={ProductItemShowDisplay3}>3</h3>
-                        <h3 className="mb-0 product-selector" onClick={ProductItemShowDisplay4}>4</h3>
+                    <div className="product-load-more-container" id="load"> 
+                        {result.length > 12 ? <span className="product-load-more-btn" onClick={ProductItemShowDisplay1}>LOAD MORE</span> : null}
                     </div>
                 </div>
 

@@ -75,35 +75,35 @@ function Header(){
                                     <span>Accessories</span>
                                     <ul style={{paddingLeft: "0px"}}>
                                         <br />
-                                        <li className="dropdown-item hoverstop"><Link to="/products">AirPort &#38; Wireless</Link></li>
-                                        <li className="dropdown-item hoverstop"><Link to="/products">Cameras &#38; Video</Link></li>  
-                                        <li className="dropdown-item hoverstop"><Link to="/products">AppleCare</Link></li>
-                                        <li className="dropdown-item hoverstop"><Link to="/products">Car &#38; Travel</Link></li>
-                                        <li className="dropdown-item hoverstop"><Link to="/products">Bags, Shells &#38; Sleeves</Link></li>
-                                        <li className="dropdown-item hoverstop"><Link to="/products">Business &#38; Security</Link></li>
-                                        <li className="dropdown-item hoverstop"><Link to="/products">Cables &#38; Docks</Link></li>
+                                        <li className="dropdown-item hoverstop"><Link to="/products?value=Accesories">AirPort &#38; Wireless</Link></li>
+                                        <li className="dropdown-item hoverstop"><Link to="/products?value=Accesories">Cameras &#38; Video</Link></li>  
+                                        <li className="dropdown-item hoverstop"><Link to="/products?value=Accesories">AppleCare</Link></li>
+                                        <li className="dropdown-item hoverstop"><Link to="/products?value=Accesories">Car &#38; Travel</Link></li>
+                                        <li className="dropdown-item hoverstop"><Link to="/products?value=Accesories">Bags, Shells &#38; Sleeves</Link></li>
+                                        <li className="dropdown-item hoverstop"><Link to="/products?value=Accesories">Business &#38; Security</Link></li>
+                                        <li className="dropdown-item hoverstop"><Link to="/products?value=Accesories">Cables &#38; Docks</Link></li>
                                     </ul>
                                 </div>
                                 <div  className="dropdown-list-head">
                                     <span>Category</span>
                                     <ul style={{paddingLeft: "0px"}}>
                                         <br />
-                                        <li className="dropdown-item hoverstop"><Link to="/products">Charging Devices</Link></li>
-                                        <li className="dropdown-item hoverstop"><Link to="/products">Connected Home</Link></li>  
-                                        <li className="dropdown-item hoverstop"><Link to="/products">Device Care</Link></li>
-                                        <li className="dropdown-item hoverstop"><Link to="/products">Display &#38; Graphic</Link></li>
-                                        <li className="dropdown-item hoverstop"><Link to="/products">Fitness &#38; Sport</Link></li>
-                                        <li className="dropdown-item hoverstop"><Link to="/products">Headphones </Link></li>
-                                        <li className="dropdown-item hoverstop"><Link to="/products">HealhKit</Link></li>
+                                        <li className="dropdown-item hoverstop"><Link to="/products?value=Accesories">Charging Devices</Link></li>
+                                        <li className="dropdown-item hoverstop"><Link to="/products?value=Accesories">Connected Home</Link></li>  
+                                        <li className="dropdown-item hoverstop"><Link to="/products?value=Accesories">Device Care</Link></li>
+                                        <li className="dropdown-item hoverstop"><Link to="/products?value=Accesories">Display &#38; Graphic</Link></li>
+                                        <li className="dropdown-item hoverstop"><Link to="/products?value=Accesories">Fitness &#38; Sport</Link></li>
+                                        <li className="dropdown-item hoverstop"><Link to="/products?value=Accesories">Headphones </Link></li>
+                                        <li className="dropdown-item hoverstop"><Link to="/products?value=Accesories">HealhKit</Link></li>
                                     </ul>
                                 </div>
                                 <div  className="dropdown-list-head">
                                     <span>Best Products</span>
                                     <ul style={{paddingLeft: "0px"}}>
                                         <br />
-                                        <li className="dropdown-item hoverstop"><Link to="/products">Mice &#38; Keyboards</Link></li>
-                                        <li className="dropdown-item hoverstop"><Link to="/products">Music Creation</Link></li>  
-                                        <li className="dropdown-item hoverstop"><Link to="/products">Networking &#38; Server</Link></li>
+                                        <li className="dropdown-item hoverstop"><Link to="/products?value=Accesories">Mice &#38; Keyboards</Link></li>
+                                        <li className="dropdown-item hoverstop"><Link to="/products?value=Accesories">Music Creation</Link></li>  
+                                        <li className="dropdown-item hoverstop"><Link to="/products?value=Accesories">Networking &#38; Server</Link></li>
                                     </ul>
                                 </div> 
                             </div>

@@ -9,7 +9,7 @@ function HomeFeatures(){
     const navigate = useNavigate();
 
     const HandleClick = () =>{
-        navigate("/products?value=Featured");
+        navigate("/products?value=Accesories");
     }
 
     useEffect(() => {

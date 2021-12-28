@@ -61,9 +61,18 @@ function Register(){
             })
         });
 
-        if(res.status === 201){
+        if(res.status === 200){
             window.alert("Successful Registration.\nEnjoy your shop.");
             navigate('/login', { replace: true });
+        }
+        else if(res.status === 201){
+            window.alert("Fill all the reqired fields.");
+        }
+        else if(res.status === 202){
+            window.alert("Passwords are not same.");
+        }
+        else if(res.status === 422){
+            window.alert("User Already exist.");
         }
         else{
             console.log(res)
