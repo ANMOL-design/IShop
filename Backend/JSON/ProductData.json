@@ -4,7 +4,8 @@
         "NewPrice": 449,
         "OldPrice": 549,
         "image": "./Images/Products/AppleMacbookAir.png",
-        "qntInStock": 2
+        "qntInStock": 2,
+        "category": "MacBook"
     },
     {
         "id": "7836482",
@@ -12,7 +13,8 @@
         "NewPrice": 499,
         "OldPrice": 599,
         "image": "./Images/Products/415ELavtbuL._SL1000_.png",
-        "qntInStock": 3
+        "qntInStock": 3,
+        "category": "MacBook"
     },
     {
         "id": "7836483",
@@ -20,7 +22,9 @@
         "NewPrice": 299,
         "OldPrice": 300,
         "image": "./Images/Products/Apple_homepod-mini-white.png",
-        "qntInStock": 1
+        "qntInStock": 1,
+        "category": "Accesories",
+        "subcategory": "More"
     },
     {
         "id": "7836484",
@@ -28,7 +32,8 @@
         "NewPrice": 149,
         "OldPrice": 180,
         "image": "./Images/Products/AppleiPhone11.png",
-        "qntInStock": 10
+        "qntInStock": 10,
+        "category": "Iphone"
     },
 
     {
@@ -37,7 +42,8 @@
         "NewPrice": 99,
         "OldPrice": 129,
         "image": "./Images/Products/apples.png",
-        "qntInStock": 8
+        "qntInStock": 8,
+        "category": "Iphone"
     },
     {
         "id": "7836486",
@@ -45,7 +51,8 @@
         "NewPrice": 189,
         "OldPrice": 199,
         "image": "./Images/Products/AppleIpad.png",
-        "qntInStock": 3
+        "qntInStock": 3,
+        "category": "Ipad"
     },
 
     {
@@ -54,7 +61,9 @@
         "NewPrice": 49,
         "OldPrice": 99,
         "image": "./Images/Products/AppleWatch21-1.png",
-        "qntInStock": 8
+        "qntInStock": 8,
+        "category": "Accesories",
+        "subcategory": "Watch"
     },
     {
         "id": "7836488",
@@ -62,7 +71,8 @@
         "NewPrice": 249,
         "OldPrice": 299,
         "image": "./Images/Products/apple_iPod_2A.png",
-        "qntInStock": 3
+        "qntInStock": 3,
+        "category": "Ipad"
     },
     {
         "id": "7836489",
@@ -70,7 +80,8 @@
         "NewPrice": 499,
         "OldPrice": 549,
         "image": "./Images/Products/macbook-pro.jpg",
-        "qntInStock": 12
+        "qntInStock": 12,
+        "category": "MacBook"
     },
     {
         "id": "78364810",
@@ -78,7 +89,9 @@
         "NewPrice": 299,
         "OldPrice": 399,
         "image": "./Images/Products/design-hero_2x.png",
-        "qntInStock": 12
+        "qntInStock": 12,
+        "category": "Accesories",
+        "subcategory": "More"
     },
 
     {
@@ -87,7 +100,9 @@
         "NewPrice": 99,
         "OldPrice": 110,
         "image": "./Images/Products/MQHX2.png",
-        "qntInStock": 11
+        "qntInStock": 11,
+        "category": "Accesories",
+        "subcategory": "More"
     },
     {
         "id": "78364812",
@@ -95,7 +110,8 @@
         "NewPrice": 399,
         "OldPrice": 499,
         "image": "./Images/Products/NewAppleMacMini.png",
-        "qntInStock": 12
+        "qntInStock": 12,
+        "category": "MacBook"
     },
     {
         "id": "78364813",
@@ -103,7 +119,8 @@
         "NewPrice": 129,
         "OldPrice": 149,
         "image": "./Images/Products/iphone6.jpg",
-        "qntInStock": 1
+        "qntInStock": 1,
+        "category": "Iphone"
     },
 
     {
@@ -112,7 +129,9 @@
         "NewPrice": 99,
         "OldPrice": 129,
         "image": "./Images/Products/AppleSmartwatchMagic.png",
-        "qntInStock": 0
+        "qntInStock": 0,
+        "category": "Accesories",
+        "subcategory": "Watch"
     },
 
     {
@@ -121,7 +140,9 @@
         "NewPrice": 199,
         "OldPrice": 229,
         "image": "./Images/Products/apple_airpods.png",
-        "qntInStock": 1
+        "qntInStock": 1,
+        "category": "Accesories",
+        "subcategory": "Airpods"
     },
     {
         "id": "78364816",
@@ -129,7 +150,10 @@
         "NewPrice": 99,
         "OldPrice": 199,
         "image": "./Images/Products/airpods-max-hero.png",
-        "qntInStock": 12
+        "qntInStock": 12,
+        "category": "Accesories",
+        "subcategory": "More"
+
     },
     {
         "id": "78364817",
@@ -137,7 +161,9 @@
         "NewPrice": 119,
         "OldPrice": 199,
         "image": "./Images/Products/3_Corousel.png",
-        "qntInStock": 7
+        "qntInStock": 7,
+        "category": "Accesories",
+        "subcategory": "Headphone"
     },
     {
         "id": "78364818",
@@ -145,7 +171,8 @@
         "NewPrice": 299,
         "OldPrice": 399,
         "image": "./Images/Products/2_corousel.png",
-        "qntInStock": 7
+        "qntInStock": 7,
+        "category": "Iphone"
     },
     {
         "id": "78364819",
@@ -153,7 +180,8 @@
         "NewPrice": 499,
         "OldPrice": 599,
         "image": "./Images/Products/41+pW8YsKfL._SL1000_.jpg",
-        "qntInStock": 9
+        "qntInStock": 9,
+        "category": "MacBook"
     },
     {
         "id": "78364820",
@@ -161,7 +189,9 @@
         "NewPrice": 49,
         "OldPrice": 99,
         "image": "./Images/Products/jack.png",
-        "qntInStock": 0
+        "qntInStock": 0,
+        "category": "Accesories",
+        "subcategory": "More"
     },
     {
         "id": "78364821",
@@ -169,7 +199,9 @@
         "NewPrice": 129,
         "OldPrice": 199,
         "image": "./Images/Products/71fwbMm1NBL._AC_SL1500_.png",
-        "qntInStock": 0
+        "qntInStock": 0,
+        "category": "Accesories",
+        "subcategory": "Watch"
     },
     {
         "id": "78364822",
@@ -177,7 +209,9 @@
         "NewPrice": 119,
         "OldPrice": 199,
         "image": "./Images/Products/apple_airpods.png",
-        "qntInStock": 4
+        "qntInStock": 4,
+        "category": "Accesories",
+        "subcategory": "Airpods"
     },
     {
         "id": "78364823",
@@ -185,7 +219,8 @@
         "NewPrice": 499,
         "OldPrice": 549,
         "image": "./Images/Products/apple_mac.svg",
-        "qntInStock": 6
+        "qntInStock": 6,
+        "category": "MacBook"
     },
     {
         "id": "78364824",
@@ -193,7 +228,9 @@
         "NewPrice": 99,
         "OldPrice": 149,
         "image": "./Images/Products/AppleWatch21-1.png",
-        "qntInStock": 1
+        "qntInStock": 1,
+        "category": "Accesories",
+        "subcategory": "Watch"
     },
     {
         "id": "78364825",
@@ -201,7 +238,10 @@
         "NewPrice": 199,
         "OldPrice": 249,
         "image": "./Images/Products/beats_headphones_story_1504589454803.webp",
-        "qntInStock": 0
+        "qntInStock": 0,
+        "category": "Accesories",
+        "subcategory": "Headphone"
+
     },
     {
         "id": "78364826",
@@ -209,7 +249,9 @@
         "NewPrice": 149,
         "OldPrice": 249,
         "image": "./Images/Products/beats_solo_2.svg",
-        "qntInStock": 8
+        "qntInStock": 8,
+        "category": "Accesories",
+        "subcategory": "Headphone"
     },
     {
         "id": "78364827",
@@ -217,7 +259,10 @@
         "NewPrice": 49,
         "OldPrice": 149,
         "image": "./Images/Products/H-squared.svg",
-        "qntInStock": 9
+        "qntInStock": 9,
+        "category": "Accesories",
+        "subcategory": "More"
+
     },
     {
         "id": "78364828",
@@ -225,7 +270,8 @@
         "NewPrice": 149,
         "OldPrice": 249,
         "image": "./Images/Products/iphone_6_plus.svg",
-        "qntInStock": 3
+        "qntInStock": 3,
+        "category": "Iphone"
     },
     {
         "id": "78364829",
@@ -233,7 +279,8 @@
         "NewPrice": 249,
         "OldPrice": 399,
         "image": "./Images/Products/iPhone_icon.svg",
-        "qntInStock": 5
+        "qntInStock": 5,
+        "category": "Iphone"
     },
     {
         "id": "78364830",
@@ -241,7 +288,9 @@
         "NewPrice": 49,
         "OldPrice": 99,
         "image": "./Images/Products/Netatmo_rain.svg",
-        "qntInStock": 6
+        "qntInStock": 6,
+        "category": "Accesories",
+        "subcategory": "Airpods"
     },
     {
         "id": "78364831",
@@ -249,7 +298,10 @@
         "NewPrice": 119,
         "OldPrice": 149,
         "image": "./Images/Products/shopping.webp",
-        "qntInStock": 9
+        "qntInStock": 9,
+        "category": "Accesories",
+        "subcategory": "Airpods"
+
     },
     {
         "id": "78364832",
@@ -257,7 +309,8 @@
         "NewPrice": 129,
         "OldPrice": 149,
         "image": "./Images/Products/s-l640.jpg",
-        "qntInStock": 1
+        "qntInStock": 1,
+        "category": "Accesories"
     },
     {
         "id": "78364833",
@@ -265,7 +318,8 @@
         "NewPrice": 329,
         "OldPrice": 349,
         "image": "./Images/Products/mobile_c2.png",
-        "qntInStock": 0
+        "qntInStock": 0,
+        "category": "Iphone"
     },
     {
         "id": "78364834",
@@ -273,7 +327,9 @@
         "NewPrice": 99,
         "OldPrice": 129,
         "image": "./Images/Products/AppleSmartwatchMagic.png",
-        "qntInStock": 8
+        "qntInStock": 8,
+        "category": "Accesories",
+        "subcategory": "Watch"
     },
     {
         "id": "78364835",
@@ -281,14 +337,53 @@
         "NewPrice": 119,
         "OldPrice": 159,
         "image": "./Images/Products/apple_airpods.png",
-        "qntInStock": 7
+        "qntInStock": 7,
+        "category": "Accesories",
+        "subcategory": "Airpods"
     },
     {
         "id": "78364836",
-        "name": "Apple Mackbook Pro",
+        "name": "Apple Macbook Pro",
         "NewPrice": 499,
         "OldPrice": 599,
         "image": "./Images/Products/AppleMacbookAir.png",
-        "qntInStock": 10
+        "qntInStock": 10,
+        "category": "MacBook"
+    },
+    {
+        "id": "78364837",
+        "name": "Apple Ipad Pro",
+        "NewPrice": 399,
+        "OldPrice": 499,
+        "image": "./Images/Products/apple_ipad1.jpg",
+        "qntInStock": 5,
+        "category": "Ipad"
+    },
+    {
+        "id": "78364838",
+        "name": "Apple Ipad Pro Max",
+        "NewPrice": 429,
+        "OldPrice": 499,
+        "image": "./Images/Products/apple_ipad2.jpg",
+        "qntInStock": 2,
+        "category": "Ipad"
+    },
+    {
+        "id": "78364839",
+        "name": "Apple Ipad Mini",
+        "NewPrice": 349,
+        "OldPrice": 429,
+        "image": "./Images/Products/apple_ipad3.jpeg",
+        "qntInStock": 4,
+        "category": "Ipad"
+    },
+    {
+        "id": "78364840",
+        "name": "Apple Ipad Latest",
+        "NewPrice": 329,
+        "OldPrice": 399,
+        "image": "./Images/Products/apple_ipad4.jpg",
+        "qntInStock": 6,
+        "category": "Ipad"
     }
 ]

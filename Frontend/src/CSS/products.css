@@ -152,6 +152,31 @@ div.form-check.form-check-inline {
     color: #fff;
 }
 
+
+/* Right  */
+
+.product-info-right-inner-acc {
+    background: #F6F7F8 0% 0% no-repeat padding-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 4%;
+    border-radius: 8px;
+    margin: 15px 0px;
+}
+
+.product-info-right-inner-acc div span {
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+.product-info-right-inner-acc div select {
+    background-color: #f0f0f0;
+    padding: 4px;
+    border-radius: 4px;
+}
+
 @media (max-width: 1060px) {
     .product-banner-text {
         margin-left: 5%;

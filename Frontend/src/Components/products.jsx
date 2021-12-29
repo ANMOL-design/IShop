@@ -73,7 +73,9 @@ function ProductsDetails(){
         }
       }, [])
 
-    var result = []
+    var result = [];
+    const [renderAcc, setrenderAcc] = useState([]);
+
     product.map((data) => {
         // console.log(data.category, qty);
         if(data.category === qty){
@@ -81,6 +83,177 @@ function ProductsDetails(){
             result.push(data);
         }
     });
+
+
+    const AccessoriesRender = () => {
+        if(qty === "Accesories"){
+
+            const handleproduct = () => {
+                
+                var e = document.getElementById("FindProducts");
+                var value = e.value;
+                      
+
+                if(value === "Airpods"){
+                    const updatedItems = result.filter( (item) => {
+                        return item.subcategory === "Airpods"
+                    })
+                    setrenderAcc(updatedItems);
+                    // console.log(updatedItems, product)
+                }
+
+                else if(value === "Headphone"){
+                    const updatedItems = result.filter( (item) => {
+                        return item.subcategory === "Headphone"
+                    })
+                    setrenderAcc(updatedItems)
+                    // console.log(updatedItems, product)
+                }
+
+                else if(value === "Watch"){
+                    const updatedItems = result.filter( (item) => {
+                        return item.subcategory === "Watch"
+                    })
+                    setrenderAcc(updatedItems)
+                    // console.log(updatedItems, product)
+                }
+
+                else if(value === "More"){
+                    const updatedItems = result.filter( (item) => {
+                        return item.subcategory === "More"
+                    })
+                    setrenderAcc(updatedItems)
+                    // console.log(updatedItems, product)
+                }
+
+                else{
+                    const updatedItems = result.filter( (item) => {
+                        return item.category === "Accesories"
+                    })
+                    setrenderAcc(updatedItems)
+                    // console.log(updatedItems, product)
+                }
+            }
+
+            return(
+                <>
+                   {/* Info about Content  */}
+                   <div className="product-info-right-inner-acc">
+                        <h3 className="mb-0">Total Items in {qty} Store: {renderAcc.length}</h3>
+                        
+                        <div>
+                            <span>FILTER</span>
+                            <select id="FindProducts" onChange={handleproduct}>
+                                <option selected>Select </option>
+                                <option value="Headphone">HeadPhone</option>
+                                <option value="Airpods">Airpods</option>
+                                <option value="Watch">Watch</option>
+                                <option value="More">Special</option>
+                                <option value="All">All</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    {renderAcc.length > 0 ?  <div></div> : setrenderAcc(product)}
+                    {/* Content of Products  */}
+                    <div className="home-products-details container-fluid">
+                    {renderAcc.slice(0, showend).map( (item) => {
+                    return(
+                        <div key={item.id} className="card " id="pc" style={{width: "17.8rem"}}>
+                            {/* Upper Image Portion of card  */}
+                            <div className="Product-image-container">
+                                <img src={item.image} className="card-img-top home-product-image" alt="Products" />
+                                    {/* OverLay Property of card  */}
+                                    <div className="overlay">
+                                        <div className="overlay-img">
+                                            <Link to={ "/products/" + item.id }><img src="./Images/Web/favorite_icon.svg" alt="Favorite" className="overlay-img-space" /></Link>
+                                            <Link to={"/cart/" + item.id + "?qty=1"}><img src="./Images/Web/add_cart_icon.svg" alt="CartAdd" className="overlay-img-space" /></Link>
+                                        </div>
+                                    </div>
+                             </div>
+                             {/* Lower Body Portion of card  */}
+                            <div className="card-body">
+                                    <h5 className="card-title">{item.name}</h5>
+                                    {/* Stars in Body  */}
+                                    <div className="product-space">
+                                        <span className="fa fa-star checked"></span>
+                                        <span className="fa fa-star checked"></span>
+                                        <span className="fa fa-star checked"></span>
+                                        <span className="fa fa-star checked"></span>
+                                        <span className="fa fa-star"></span>
+                                    </div>
+                                    {/* Product Price in Body  */}
+                                    <div className="product-space">
+                                        <span className="product-actual-price">${item.NewPrice}</span>
+                                        <span className="product-old-price">${item.OldPrice}</span>
+                                    </div>
+                                    <div className="cart-btn-home"><Link to={"/cart/" + item.id + "?qty=1"} ><button className="btn btn-primary">ADD TO CART</button></Link></div>
+                            </div>
+                        </div>
+                        )
+                    })}
+                    </div> 
+                    {/* Making the selection list  */}
+                    <div className="product-load-more-container" id="load"> 
+                        {result.length > 12 ? <span className="product-load-more-btn" onClick={ProductItemShowDisplay1}>LOAD MORE</span> : null}
+                    </div>
+                </>
+            )
+        }
+        else{
+            return(
+                <>
+                    {/* Info about Content  */}
+                    <div className="product-info-right-inner">
+                        <h3 className="mb-0">Total Items in {qty} Store: {result.length}</h3>
+                    </div>
+                    {/* Content of Products  */}
+                    <div className="home-products-details container-fluid">
+                    {result.slice(0, showend).map( (item) => {
+                    return(
+                        <div key={item.id} className="card " id="pc" style={{width: "17.8rem"}}>
+                            {/* Upper Image Portion of card  */}
+                            <div className="Product-image-container">
+                                <img src={item.image} className="card-img-top home-product-image" alt="Products" />
+                                    {/* OverLay Property of card  */}
+                                    <div className="overlay">
+                                        <div className="overlay-img">
+                                            <Link to={ "/products/" + item.id }><img src="./Images/Web/favorite_icon.svg" alt="Favorite" className="overlay-img-space" /></Link>
+                                            <Link to={"/cart/" + item.id + "?qty=1"}><img src="./Images/Web/add_cart_icon.svg" alt="CartAdd" className="overlay-img-space" /></Link>
+                                        </div>
+                                    </div>
+                             </div>
+                             {/* Lower Body Portion of card  */}
+                            <div className="card-body">
+                                    <h5 className="card-title">{item.name}</h5>
+                                    {/* Stars in Body  */}
+                                    <div className="product-space">
+                                        <span className="fa fa-star checked"></span>
+                                        <span className="fa fa-star checked"></span>
+                                        <span className="fa fa-star checked"></span>
+                                        <span className="fa fa-star checked"></span>
+                                        <span className="fa fa-star"></span>
+                                    </div>
+                                    {/* Product Price in Body  */}
+                                    <div className="product-space">
+                                        <span className="product-actual-price">${item.NewPrice}</span>
+                                        <span className="product-old-price">${item.OldPrice}</span>
+                                    </div>
+                                    <div className="cart-btn-home"><Link to={"/cart/" + item.id + "?qty=1"} ><button className="btn btn-primary">ADD TO CART</button></Link></div>
+                            </div>
+                        </div>
+                        )
+                    })}
+                    </div>
+
+                    {/* Making the selection list  */}
+                    <div className="product-load-more-container" id="load"> 
+                        {result.length > 12 ? <span className="product-load-more-btn" onClick={ProductItemShowDisplay1}>LOAD MORE</span> : null}
+                    </div>
+                </>
+            )
+        }
+    }
 
     return(
         <> 
@@ -151,55 +324,10 @@ function ProductsDetails(){
                         </div>
                         <img src="./Images/Web/iphone_6_plus.svg" alt="Ihpone" className="Image_banner_product"/>
                     </div>
-                    {/* Info about Content  */}
-                    <div className="product-info-right-inner">
-                        <h3 className="mb-0">Total Items in {qty} Store: {result.length}</h3>
-                    </div>
-                    {/* Content of Products  */}
-                    <div className="home-products-details container-fluid">
-                    {result.slice(0, showend).map( (item) => {
-                    return(
-                        <div key={item.id} className="card " id="pc" style={{width: "17.8rem"}}>
-                            {/* Upper Image Portion of card  */}
-                            <div className="Product-image-container">
-                                <img src={item.image} className="card-img-top home-product-image" alt="Products" />
-                                    {/* OverLay Property of card  */}
-                                    <div className="overlay">
-                                        <div className="overlay-img">
-                                            <Link to={ "/products/" + item.id }><img src="./Images/Web/favorite_icon.svg" alt="Favorite" className="overlay-img-space" /></Link>
-                                            <Link to={"/cart/" + item.id + "?qty=1"}><img src="./Images/Web/add_cart_icon.svg" alt="CartAdd" className="overlay-img-space" /></Link>
-                                        </div>
-                                    </div>
-                             </div>
-                             {/* Lower Body Portion of card  */}
-                            <div className="card-body">
-                                    <h5 className="card-title">{item.name}</h5>
-                                    {/* Stars in Body  */}
-                                    <div className="product-space">
-                                        <span className="fa fa-star checked"></span>
-                                        <span className="fa fa-star checked"></span>
-                                        <span className="fa fa-star checked"></span>
-                                        <span className="fa fa-star checked"></span>
-                                        <span className="fa fa-star"></span>
-                                    </div>
-                                    {/* Product Price in Body  */}
-                                    <div className="product-space">
-                                        <span className="product-actual-price">${item.NewPrice}</span>
-                                        <span className="product-old-price">${item.OldPrice}</span>
-                                    </div>
-                                    <div className="cart-btn-home"><Link to={"/cart/" + item.id + "?qty=1"} ><button className="btn btn-primary">ADD TO CART</button></Link></div>
-                            </div>
-                        </div>
-                        )
-                    })}
-                    </div>
 
-                    {/* Making the selection list  */}
-                    <div className="product-load-more-container" id="load"> 
-                        {result.length > 12 ? <span className="product-load-more-btn" onClick={ProductItemShowDisplay1}>LOAD MORE</span> : null}
-                    </div>
+                    {/* Rendering The Product details  */}
+                    <AccessoriesRender />
                 </div>
-
             </div>
         </>
     )

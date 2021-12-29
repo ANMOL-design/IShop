@@ -18,7 +18,7 @@ mongoose.connect(
     },
     (err) => {
         if (err) throw err;
-        console.log("Connection for Login/Register established Successfully");
+        console.log("Connection for Login/Register established Successfully.");
     }
 )
 
@@ -28,10 +28,11 @@ router.post("/register", async(req, res) => {
     console.log(name);
 
     if (!name || !email || !number || !password || !cpassword) {
-        return res.json({ msg: "Fill all the reqired fields" })
+        return res.sendStatus(201);
     } else if (password !== cpassword) {
-        return res.json({ msg: "Passwords are not same" });
+        return res.sendStatus(202);
     }
+
 
     // Find that user number is not available already in DB
     User.findOne({ number: number }).then((numberexist) => {
@@ -44,7 +45,7 @@ router.post("/register", async(req, res) => {
     User.findOne({ email: email })
         .then((existingUser) => {
             if (existingUser) {
-                return res.sendStatus(422).json({ msg: "User Already exist" });
+                return res.sendStatus(422);
             }
 
             const user = new User({ name, email, number, password, cpassword, time });
@@ -52,7 +53,7 @@ router.post("/register", async(req, res) => {
 
             // Save the user to DB and send Successful message
             user.save().then(() => {
-                    res.status(201).json({ msg: "Registration Successful" });
+                    res.status(200).json({ msg: "Registration Successful" });
                 })
                 .catch(() => {
                     res.status(501).json({ msg: "Failed to Register" })
@@ -61,19 +62,17 @@ router.post("/register", async(req, res) => {
         .catch((err) => {
             console.log("Mera Dimag Kaharab hai mai error bej ra" + err);
         })
-
-
-
 })
 
 // API for the uer Login
 router.post("/login", async(req, res) => {
     try {
         const { Email, Password } = req.body;
-        // console.log(Email, Password);
+        console.log(Email, Password);
 
         if (!Email || !Password) {
-            res.sendStatus(400).json({ msg: "Fill all the required fileds" });
+            console.log("Email or Password Not Filled.")
+            return res.sendStatus(400);
         }
 
         const userLogin = await User.findOne({ email: Email });
@@ -96,15 +95,17 @@ router.post("/login", async(req, res) => {
 
             // console.log("Status return");
             if (!isMatch) {
-                return res.status(400).json({ msg: "Invalid Credential" });
+                console.log("Password Not correct.")
+                return res.status(401).json({ msg: "Invalid Credential" });
             } else {
-                res.status(201).json({ msg: "login Succesfully" })
+                return res.status(200).json({ msg: "Login Succesfully" })
             }
 
             // console.log("Status return Again");
 
         } else {
-            res.status(400).json({ msg: "Invalid Credential" });
+            console.log("User Not Exist, Register First.")
+            return res.status(402).json({ msg: "Invalid Credential" });
         }
     } catch (err) {
         console.log("Mai Pagal Ho gya hoo " + err);
