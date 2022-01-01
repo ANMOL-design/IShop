@@ -12,6 +12,8 @@ import Register from "./Components/Register";
 import Login from "./Components/Login";
 import AboutUser from "./Components/UserProfile";
 import Logout from "./Components/Logout";
+import ProductsDetailsBrand from "./Components/SubComponent/ProductsDetailsBrand";
+import ProductsDetailsAccessories from "./Components/SubComponent/ProductAccessories";
 
 
 function App(){
@@ -21,6 +23,8 @@ function App(){
               <Header />
               <Routes>
                   <Route path="/products" element={ <ProductsDetails />} />
+                  <Route path="/productdetails" element={ <ProductsDetailsBrand />} />
+                  <Route path="/productaccessories" element={ <ProductsDetailsAccessories />} />
                   <Route path="/register" element={ <Register />} />
                   <Route path="/login" element={ <Login />} />
                   <Route path="/products/:id" element={ <ProductsEachItem />} />

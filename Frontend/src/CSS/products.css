@@ -86,6 +86,11 @@
 .infop {
     font-weight: 500;
     margin: 0;
+    color: #22262A;
+}
+
+a {
+    text-decoration: none;
 }
 
 .color-detais {
@@ -97,30 +102,6 @@
 
 div.form-check.form-check-inline {
     margin-right: 6px;
-}
-
-#blue {
-    background-color: #006CFF;
-}
-
-#black {
-    background-color: #000;
-    border-color: #000;
-}
-
-#grey {
-    background-color: #EFDFDF;
-    border-color: #EFDFDF;
-}
-
-#red {
-    background-color: #FC3E39;
-    border-color: #FC3E39;
-}
-
-#yellow {
-    background-color: #FFF600;
-    border-color: #FFF600;
 }
 
 
@@ -175,6 +156,29 @@ div.form-check.form-check-inline {
     background-color: #f0f0f0;
     padding: 4px;
     border-radius: 4px;
+}
+
+.product-load-more-container-brand {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #F6F7F8;
+    color: #22262A;
+    font-size: 22px;
+    font-weight: 600;
+    border-radius: 5px;
+    margin: 2%;
+}
+
+.dis-btn-brand {
+    cursor: pointer;
+    padding: 1% 2%;
+}
+
+.dis-btn-brand:hover {
+    background-color: #22262A;
+    color: #f0f0f0;
 }
 
 @media (max-width: 1060px) {

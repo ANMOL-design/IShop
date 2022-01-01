@@ -13,51 +13,69 @@ function ProductsDetails(){
     const [product, setproduct] = useState([]);
     const [cntBrand, setcntBrand] = useState([4]);
 
+    var [showstart, setshowstart] = useState([0]);
     var [showend, setshowend] = useState([9]);
 
     const ProductItemShowDisplay1 = () => {
-        setshowend(Number(showend) + 3);
+        setshowstart(0)
+        setshowend(9);
+        window.scroll(0, 200)
+    }
+    const ProductItemShowDisplay2 = () => {
+        setshowstart(9)
+        setshowend(18);
+        window.scroll(0, 200)
+    }
+    const ProductItemShowDisplay3 = () => {
+        setshowstart(18)
+        setshowend(27);
+        window.scroll(0, 200)
+    }
+    const ProductItemShowDisplay4 = () => {
+        setshowstart(27)
+        setshowend(36);
+        window.scroll(0, 200)
     }
 
     const qty = value.split("=")[1];
 
-    const inputcolor = ["blue", "black", "red", "yellow","grey"];
+    // const inputcolor = ["blue", "black", "red", "yellow","grey"];
 
     const BrandInc = () => {
         setcntBrand(Number(cntBrand) + 4);
         document.getElementById("LoadBrand").style.display = "none";
     }
 
-    const getclickedcolorvalue = () =>{
-        var getSelectedValue = document.querySelector( 'input[name="inlineRadioOptions"]:checked');   
+    // const getclickedcolorvalue = () =>{
+    //     var getSelectedValue = document.querySelector( 'input[name="inlineRadioOptions"]:checked');   
 
-        if(getSelectedValue.value === "blue"){
-            document.getElementsByClassName("product-banner")[0].style.background= "#2E90E5";
-            document.getElementsByClassName("product-banner-text")[0].style.color= "#fff";
-            document.getElementsByClassName("product-banner-link")[0].style.color= "#fff";
-        }
-        else if(getSelectedValue.value === "black"){
-            document.getElementsByClassName("product-banner")[0].style.background= "#171717";
-            document.getElementsByClassName("product-banner-text")[0].style.color= "#fff";
-            document.getElementsByClassName("product-banner-link")[0].style.color= "#fff";
-        }
-        else if(getSelectedValue.value === "grey"){
-            document.getElementsByClassName("product-banner")[0].style.background= "#F6F7F8";
-            document.getElementsByClassName("product-banner-text")[0].style.color= "#000";
-            document.getElementsByClassName("product-banner-link")[0].style.color= "#000";
-        }
-        else if(getSelectedValue.value === "red"){
-            document.getElementsByClassName("product-banner")[0].style.background= "#FC3E39";
-            document.getElementsByClassName("product-banner-text")[0].style.color= "#fff";
-            document.getElementsByClassName("product-banner-link")[0].style.color= "#fff";
-        }
-        else if(getSelectedValue.value === "yellow"){
-            document.getElementsByClassName("product-banner")[0].style.background= "#FFF600";
-            document.getElementsByClassName("product-banner-text")[0].style.color= "#000";
-            document.getElementsByClassName("product-banner-link")[0].style.color= "#000";
-        }
+    //     if(getSelectedValue.value === "blue"){
+    //         document.getElementsByClassName("product-banner")[0].style.background= "#2E90E5";
+    //         document.getElementsByClassName("product-banner-text")[0].style.color= "#fff";
+    //         document.getElementsByClassName("product-banner-link")[0].style.color= "#fff";
+    //     }
+    //     else if(getSelectedValue.value === "black"){
+    //         document.getElementsByClassName("product-banner")[0].style.background= "#171717";
+    //         document.getElementsByClassName("product-banner-text")[0].style.color= "#fff";
+    //         document.getElementsByClassName("product-banner-link")[0].style.color= "#fff";
+    //     }
+    //     else if(getSelectedValue.value === "grey"){
+    //         document.getElementsByClassName("product-banner")[0].style.background= "#F6F7F8";
+    //         document.getElementsByClassName("product-banner-text")[0].style.color= "#000";
+    //         document.getElementsByClassName("product-banner-link")[0].style.color= "#000";
+    //     }
+    //     else if(getSelectedValue.value === "red"){
+    //         document.getElementsByClassName("product-banner")[0].style.background= "#FC3E39";
+    //         document.getElementsByClassName("product-banner-text")[0].style.color= "#fff";
+    //         document.getElementsByClassName("product-banner-link")[0].style.color= "#fff";
+    //     }
+    //     else if(getSelectedValue.value === "yellow"){
+    //         document.getElementsByClassName("product-banner")[0].style.background= "#FFF600";
+    //         document.getElementsByClassName("product-banner-text")[0].style.color= "#000";
+    //         document.getElementsByClassName("product-banner-link")[0].style.color= "#000";
+    //     }
 
-    }
+    // }
     
 
     useEffect(() => {
@@ -157,7 +175,7 @@ function ProductsDetails(){
                     {renderAcc.length > 0 ?  <div></div> : setrenderAcc(product)}
                     {/* Content of Products  */}
                     <div className="home-products-details container-fluid">
-                    {renderAcc.slice(0, showend).map( (item) => {
+                    {renderAcc.slice(showstart, showend).map( (item) => {
                     return(
                         <div key={item.id} className="card " id="pc" style={{width: "17.8rem"}}>
                             {/* Upper Image Portion of card  */}
@@ -194,9 +212,18 @@ function ProductsDetails(){
                     })}
                     </div> 
                     {/* Making the selection list  */}
-                    <div className="product-load-more-container" id="load"> 
-                        {result.length > 12 ? <span className="product-load-more-btn" onClick={ProductItemShowDisplay1}>LOAD MORE</span> : null}
-                    </div>
+                    {/* Making the selection list  */}
+                    {
+                        renderAcc.length > 12 ? 
+                        <div className="product-load-more-container-brand" id="load"> 
+                            <span className="dis-btn-brand" onClick={ProductItemShowDisplay1}>1</span> 
+                            <span className="dis-btn-brand" onClick={ProductItemShowDisplay2}>2</span> 
+                            <span className="dis-btn-brand" onClick={ProductItemShowDisplay3}>3</span> 
+                            <span className="dis-btn-brand" onClick={ProductItemShowDisplay4}>4</span> 
+                        </div>
+                        : 
+                        null
+                    } 
                 </>
             )
         }
@@ -272,18 +299,20 @@ function ProductsDetails(){
                             <h4 className="mb-3 mt-2">ACCESORIES</h4>
                             {Acinfo.map( (item) => {
                                 return(
-                                    <div className="infodetails" key={item.id}>
-                                        <p className="infop">{item.product}</p>
-                                        <span style={{color: "#c0c0c0"}}>{item.count}</span>
-                                    </div>
+                                    <Link to={"/productaccessories?value=" + item.product}>
+                                        <div className="infodetails" key={item.id}>
+                                            <p className="infop">{item.product}</p>
+                                            <span style={{color: "#c0c0c0"}}>{item.count}</span>
+                                        </div>
+                                    </Link>
                                 )
                             })} 
                         </div>
                         {/* Color  */}
-                        <div className="product-info-left-inner">
-                            <h4 className="mb-3 mt-2">COLOR</h4>
+                        {/* <div className="product-info-left-inner">
+                            <h4 className="mb-3 mt-2">COLOR</h4> */}
                             {/* Color Button Click  */}
-                            {inputcolor.map( (value, key) => {
+                            {/* {inputcolor.map( (value, key) => {
                                 return(
                                     <div className="form-check form-check-inline" key={key}>
                                         <input className="form-check-input" type="radio" name="inlineRadioOptions" id={value} value={value} onClick={getclickedcolorvalue}/>
@@ -291,16 +320,18 @@ function ProductsDetails(){
                                     </div>
                                 )
                             })}
-                        </div>
+                        </div> */}
                         {/* Brands  */}
                         <div className="product-info-left-inner">
                             <h4 className="mb-3 mt-2">BRAND</h4>
                             {Brands.slice(0,cntBrand).map( (item) => {
                                 return(
-                                    <div className="infodetails" key={item.id}>
-                                        <p className="infop">{item.brandname}</p>
-                                        <span style={{color: "#c0c0c0"}}>{item.count}</span>
-                                    </div>
+                                    <Link to={"/productdetails?value=" + item.brandname}>
+                                        <div className="infodetails" key={item.id}>
+                                            <p className="infop">{item.brandname}</p>
+                                            <span style={{color: "#c0c0c0"}}>{item.count}</span>  
+                                        </div>
+                                    </Link>
                                 )
                             })} 
                         </div>
